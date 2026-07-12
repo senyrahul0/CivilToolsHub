@@ -1,103 +1,98 @@
-import Image from "next/image";
+import Link from "next/link";
+
+import PopularTools from "@/components/home/PopularTools";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main className="bg-zinc-950">
+        <section className="relative overflow-hidden border-b border-zinc-800 bg-zinc-950">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.12),transparent_35%)]" />
+
+          <div className="absolute -left-24 top-32 h-72 w-72 rounded-full bg-yellow-400/5 blur-3xl" />
+
+          <div className="relative mx-auto flex min-h-[650px] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-yellow-400" />
+
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-yellow-400 sm:text-sm">
+                Built for Construction Professionals
+              </p>
+            </div>
+
+            <h1 className="max-w-5xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+              Construction Engineering Tools for{" "}
+              <span className="text-yellow-400">
+                Smarter Site Work
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-400">
+              Access practical civil engineering calculators, construction
+              safety tools, engineering templates, and technical resources in
+              one place.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/calculators"
+                className="rounded-lg bg-yellow-400 px-7 py-3.5 text-sm font-bold text-zinc-950 shadow-lg shadow-yellow-400/10 transition hover:bg-yellow-300"
+              >
+                Explore Calculators
+              </Link>
+
+              <Link
+                href="/safety"
+                className="rounded-lg border border-zinc-700 bg-zinc-900 px-7 py-3.5 text-sm font-bold text-white transition hover:border-yellow-400 hover:text-yellow-400"
+              >
+                Explore Safety Tools
+              </Link>
+            </div>
+
+            <div className="mt-16 grid w-full max-w-3xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-zinc-800 bg-zinc-800 sm:grid-cols-3">
+              <div className="bg-zinc-900 px-6 py-5">
+                <p className="text-2xl font-black text-yellow-400">
+                  Engineering
+                </p>
+
+                <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                  Practical Tools
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 px-6 py-5">
+                <p className="text-2xl font-black text-yellow-400">
+                  Construction
+                </p>
+
+                <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                  Site Focused
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 px-6 py-5">
+                <p className="text-2xl font-black text-yellow-400">
+                  Safety
+                </p>
+
+                <p className="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                  Professional Resources
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="bg-stone-100">
+          <PopularTools />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+      <Footer />
+    </>
   );
 }
