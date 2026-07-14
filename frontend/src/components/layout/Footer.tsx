@@ -25,6 +25,14 @@ const platformLinks = [
     href: "/",
   },
   {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Safety Library",
+    href: "/safety",
+  },
+  {
     name: "All Calculators",
     href: "/calculators",
   },
@@ -70,9 +78,10 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-zinc-400">
-              Practical construction calculators and digital site
-              tools for civil engineers, site engineers, safety
-              professionals, and construction teams.
+              Practical construction calculators, structured safety
+              knowledge, and digital site tools for civil engineers,
+              site engineers, safety professionals, and construction
+              teams.
             </p>
 
             <div className="mt-6 border-l-4 border-yellow-400 bg-zinc-900 p-4">
@@ -81,7 +90,7 @@ export default function Footer() {
               </p>
 
               <p className="mt-2 text-sm leading-6 text-zinc-400">
-                Fast calculations. Practical planning. Clear results.
+                Fast calculations. Practical safety. Clear guidance.
               </p>
             </div>
           </div>
@@ -125,9 +134,10 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 transition hover:text-yellow-400"
+                    className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-yellow-400"
                   >
-                    {link.name}
+                    <span>{link.name}</span>
+                    <span className="text-yellow-400">→</span>
                   </Link>
                 </li>
               ))}
@@ -138,7 +148,6 @@ export default function Footer() {
             </p>
 
             <ul className="mt-4 space-y-3 text-sm text-zinc-600">
-              <li>Safety — Coming Soon</li>
               <li>Templates — Coming Soon</li>
               <li>Blog — Coming Soon</li>
             </ul>
@@ -164,16 +173,16 @@ export default function Footer() {
 
             <div className="mt-7 border border-zinc-800 bg-zinc-900 p-5">
               <p className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                Current Tool Library
+                Current Platform
               </p>
 
               <p className="mt-2 text-2xl font-black text-yellow-400">
-                5 Live Tools
+                Tools + Safety
               </p>
 
               <p className="mt-2 text-xs leading-5 text-zinc-500">
-                Concrete, RMC planning, steel, brickwork, and plaster
-                calculation tools.
+                Construction calculators and structured safety guidance
+                organized around sectors, work activities, and hazards.
               </p>
             </div>
           </div>
@@ -182,16 +191,17 @@ export default function Footer() {
         <div className="mt-12 border-t border-zinc-800 pt-7">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <p className="text-sm text-zinc-500">
-              © {currentYear} CivilToolsHub. Construction calculation
-              and site planning tools.
+              © {currentYear} CivilToolsHub. Construction tools and
+              practical safety knowledge.
             </p>
 
             <p className="max-w-2xl text-xs leading-5 text-zinc-600 lg:text-right">
-              Calculator results are preliminary planning estimates.
-              Verify final quantities and execution requirements
-              against approved drawings, project specifications,
-              applicable codes, manufacturer data, and actual site
-              conditions.
+              Calculator results and safety information are provided as
+              practical reference resources. Verify final quantities,
+              execution requirements, safety controls, and site
+              procedures against approved drawings, project
+              specifications, applicable codes, manufacturer data, and
+              actual site conditions.
             </p>
           </div>
         </div>

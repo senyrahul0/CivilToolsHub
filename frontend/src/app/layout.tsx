@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import GlobalBackButton from "@/components/navigation/GlobalBackButton";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -38,6 +39,10 @@ export const metadata: Metadata = {
     "Plaster Calculator",
     "Construction Material Calculator",
     "Civil Engineering Tools",
+    "Construction Safety",
+    "Construction Safety Tools",
+    "Safety Hazard Guidance",
+    "High Rise Building Safety",
   ],
 
   applicationName: siteConfig.name,
@@ -94,6 +99,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GlobalBackButton />
+
         {children}
       </body>
     </html>

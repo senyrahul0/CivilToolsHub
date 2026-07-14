@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,23 +11,28 @@ const navigation = [
     live: true,
   },
   {
+    name: "About",
+    href: "/about",
+    live: true,
+  },
+  {
     name: "Calculators",
     href: "/calculators",
     live: true,
   },
   {
     name: "Safety",
-    href: "#",
-    live: false,
+    href: "/safety",
+    live: true,
   },
   {
     name: "Templates",
-    href: "#",
+    href: "/templates",
     live: false,
   },
   {
     name: "Blog",
-    href: "#",
+    href: "/blog",
     live: false,
   },
 ];
@@ -43,7 +48,10 @@ export default function Header() {
       return pathname === "/";
     }
 
-    return pathname.startsWith(href);
+    return (
+      pathname === href ||
+      pathname.startsWith(`${href}/`)
+    );
   }
 
   return (
@@ -54,7 +62,7 @@ export default function Header() {
         <Link
           href="/"
           onClick={() => setMobileMenuOpen(false)}
-          className="group flex items-center gap-3"
+          className="group flex cursor-pointer items-center gap-3"
         >
           <span className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg font-black text-zinc-950 transition group-hover:bg-yellow-300">
             CT
@@ -84,13 +92,25 @@ export default function Header() {
 
             if (!item.live) {
               return (
-                <span
+                <div
                   key={item.name}
-                  title="Coming Soon"
-                  className="cursor-not-allowed px-4 py-3 text-sm font-bold text-zinc-600"
+                  className="group relative"
                 >
-                  {item.name}
-                </span>
+                  <span
+                    className="relative block cursor-default px-4 py-3 text-sm font-bold text-zinc-500 transition hover:text-yellow-400"
+                    aria-disabled="true"
+                  >
+                    {item.name}
+
+                    <span className="absolute bottom-0 left-4 right-4 h-0.5 origin-left scale-x-0 bg-yellow-400 transition-transform duration-200 group-hover:scale-x-100" />
+                  </span>
+
+                  <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden -translate-x-1/2 pt-2 group-hover:block">
+                    <div className="whitespace-nowrap border border-zinc-700 bg-zinc-900 px-3 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-yellow-400 shadow-xl">
+                      Coming Soon
+                    </div>
+                  </div>
+                </div>
               );
             }
 
@@ -98,7 +118,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-4 py-3 text-sm font-bold transition ${
+                className={`group relative cursor-pointer px-4 py-3 text-sm font-bold transition ${
                   active
                     ? "text-yellow-400"
                     : "text-zinc-300 hover:text-yellow-400"
@@ -106,9 +126,13 @@ export default function Header() {
               >
                 {item.name}
 
-                {active && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-yellow-400" />
-                )}
+                <span
+                  className={`absolute bottom-0 left-4 right-4 h-0.5 origin-left bg-yellow-400 transition-transform duration-200 ${
+                    active
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
             );
           })}
@@ -117,7 +141,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <Link
             href="/calculators"
-            className="inline-flex items-center justify-center bg-yellow-400 px-5 py-3 text-sm font-black text-zinc-950 transition hover:bg-yellow-300"
+            className="inline-flex cursor-pointer items-center justify-center bg-yellow-400 px-5 py-3 text-sm font-black text-zinc-950 transition hover:bg-yellow-300"
           >
             Explore Tools
           </Link>
@@ -128,7 +152,7 @@ export default function Header() {
           onClick={() =>
             setMobileMenuOpen((current) => !current)
           }
-          className="flex h-11 w-11 items-center justify-center border border-zinc-700 bg-zinc-900 text-yellow-400 transition hover:border-yellow-400 lg:hidden"
+          className="flex h-11 w-11 cursor-pointer items-center justify-center border border-zinc-700 bg-zinc-900 text-yellow-400 transition hover:border-yellow-400 lg:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={mobileMenuOpen}
         >
@@ -138,7 +162,7 @@ export default function Header() {
 
           {mobileMenuOpen ? (
             <span className="text-2xl font-light">
-              ×
+              Ã—
             </span>
           ) : (
             <span className="flex flex-col gap-1.5">
@@ -168,11 +192,11 @@ export default function Header() {
                       key={item.name}
                       className="flex items-center justify-between px-4 py-3"
                     >
-                      <span className="text-sm font-bold text-zinc-600">
+                      <span className="text-sm font-bold text-zinc-500">
                         {item.name}
                       </span>
 
-                      <span className="border border-zinc-800 px-2 py-1 text-[9px] font-black uppercase tracking-wider text-zinc-600">
+                      <span className="border border-zinc-700 px-2 py-1 text-[9px] font-black uppercase tracking-wider text-yellow-400">
                         Soon
                       </span>
                     </div>
@@ -186,7 +210,7 @@ export default function Header() {
                     onClick={() =>
                       setMobileMenuOpen(false)
                     }
-                    className={`flex items-center justify-between px-4 py-3 text-sm font-bold transition ${
+                    className={`flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-bold transition ${
                       active
                         ? "bg-yellow-400 text-zinc-950"
                         : "text-zinc-300 hover:bg-zinc-900 hover:text-yellow-400"
@@ -194,7 +218,7 @@ export default function Header() {
                   >
                     <span>{item.name}</span>
 
-                    <span>→</span>
+                    <span>â†’</span>
                   </Link>
                 );
               })}
@@ -205,7 +229,7 @@ export default function Header() {
               onClick={() =>
                 setMobileMenuOpen(false)
               }
-              className="mt-5 flex w-full items-center justify-center bg-yellow-400 px-5 py-4 text-sm font-black text-zinc-950 transition hover:bg-yellow-300"
+              className="mt-5 flex w-full cursor-pointer items-center justify-center bg-yellow-400 px-5 py-4 text-sm font-black text-zinc-950 transition hover:bg-yellow-300"
             >
               Explore Construction Tools
             </Link>
@@ -215,3 +239,5 @@ export default function Header() {
     </header>
   );
 }
+
+
