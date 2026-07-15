@@ -53,47 +53,47 @@ const tools = [
 
 export default function PopularTools() {
   return (
-    <section className="border-y border-zinc-800 bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="h-1 w-10 bg-yellow-400" />
+    <section className="w-full overflow-hidden border-y border-zinc-800 bg-zinc-950">
+      <div className="mx-auto w-full max-w-7xl px-3 py-12 min-[360px]:px-4 sm:px-6 sm:py-16 lg:px-8">
+        <div className="flex min-w-0 flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="min-w-0">
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="h-1 w-8 shrink-0 bg-yellow-400 sm:w-10" />
 
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-yellow-400">
+              <p className="min-w-0 text-[10px] font-black uppercase leading-5 tracking-[0.12em] text-yellow-400 min-[360px]:text-xs sm:tracking-[0.2em]">
                 Construction Engineering Tools
               </p>
             </div>
 
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-white sm:mt-5 sm:text-4xl">
               Popular Construction Tools
             </h2>
 
-            <p className="mt-4 max-w-2xl leading-7 text-zinc-400">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400 sm:text-base">
               Practical calculators and site tools built for civil
               engineers, site engineers, safety professionals, and
               construction teams.
             </p>
           </div>
 
-          <div className="w-fit border border-zinc-700 bg-zinc-900 px-4 py-3">
-            <p className="text-xs font-black uppercase tracking-wider text-zinc-500">
+          <div className="w-full border border-zinc-700 bg-zinc-900 px-4 py-3 sm:w-fit sm:shrink-0">
+            <p className="text-[10px] font-black uppercase tracking-wider text-zinc-500 sm:text-xs">
               Platform Status
             </p>
 
-            <p className="mt-1 text-sm font-bold text-yellow-400">
+            <p className="mt-1 text-sm font-bold leading-6 text-yellow-400">
               Core Tools Under Development
             </p>
           </div>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool, index) => {
             const isLive = tool.status === "Live";
 
             const cardContent = (
               <article
-                className={`group relative h-full overflow-hidden border p-6 transition ${
+                className={`group relative flex h-full min-w-0 flex-col overflow-hidden border p-5 transition sm:p-6 ${
                   isLive
                     ? "border-zinc-700 bg-zinc-900 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl"
                     : "border-zinc-800 bg-zinc-900/60"
@@ -101,13 +101,13 @@ export default function PopularTools() {
               >
                 <div className="absolute left-0 top-0 h-1 w-full bg-yellow-400" />
 
-                <div className="flex items-start justify-between gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-sm font-black text-zinc-950">
+                <div className="flex min-w-0 items-start justify-between gap-3 sm:gap-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-yellow-400 text-xs font-black text-zinc-950 sm:h-11 sm:w-11 sm:text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
                   <span
-                    className={`px-3 py-1 text-[11px] font-black uppercase tracking-wider ${
+                    className={`max-w-[55%] shrink-0 px-2 py-1 text-center text-[9px] font-black uppercase leading-4 tracking-wider min-[360px]:px-3 min-[360px]:text-[10px] sm:text-[11px] ${
                       isLive
                         ? "bg-yellow-400 text-zinc-950"
                         : "border border-zinc-700 bg-zinc-950 text-zinc-500"
@@ -117,29 +117,39 @@ export default function PopularTools() {
                   </span>
                 </div>
 
-                <p className="mt-7 text-xs font-black uppercase tracking-[0.18em] text-yellow-400">
+                <p className="mt-6 text-[10px] font-black uppercase leading-5 tracking-[0.14em] text-yellow-400 sm:mt-7 sm:text-xs sm:tracking-[0.18em]">
                   {tool.category}
                 </p>
 
-                <h3 className="mt-3 text-xl font-black text-white">
+                <h3 className="mt-2 text-xl font-black leading-tight text-white sm:mt-3">
                   {tool.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-6 text-zinc-400">
+                <p className="mt-4 flex-1 text-sm leading-6 text-zinc-400">
                   {tool.description}
                 </p>
 
-                <div className="mt-7 border-t border-zinc-800 pt-5">
+                <div className="mt-6 border-t border-zinc-800 pt-5 sm:mt-7">
                   <span
-                    className={`text-sm font-black ${
+                    className={`inline-flex min-h-6 items-center text-sm font-black ${
                       isLive
                         ? "text-yellow-400 transition group-hover:text-yellow-300"
                         : "text-zinc-600"
                     }`}
                   >
-                    {isLive
-                      ? "Open Tool →"
-                      : "Development Planned"}
+                    {isLive ? (
+                      <>
+                        Open Tool
+                        <span
+                          className="ml-2 transition-transform group-hover:translate-x-1"
+                          aria-hidden="true"
+                        >
+                          &rarr;
+                        </span>
+                      </>
+                    ) : (
+                      "Development Planned"
+                    )}
                   </span>
                 </div>
               </article>
@@ -147,7 +157,10 @@ export default function PopularTools() {
 
             if (!isLive) {
               return (
-                <div key={tool.title}>
+                <div
+                  key={tool.title}
+                  className="min-w-0"
+                >
                   {cardContent}
                 </div>
               );
@@ -157,7 +170,8 @@ export default function PopularTools() {
               <Link
                 key={tool.title}
                 href={tool.href}
-                className="block"
+                className="block min-w-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+                aria-label={`Open ${tool.title}`}
               >
                 {cardContent}
               </Link>

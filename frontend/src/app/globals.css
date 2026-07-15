@@ -25,22 +25,140 @@
   --font-mono: var(--font-geist-mono);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+
   background: var(--background);
   color: var(--foreground);
+
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main,
+header,
+footer,
+section,
+article,
+aside,
+nav {
+  min-width: 0;
+  max-width: 100%;
+}
+
+div {
+  min-width: 0;
+}
+
+img,
+picture,
+svg,
+canvas,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  overflow-wrap: anywhere;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+span {
+  overflow-wrap: break-word;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  overflow-wrap: anywhere;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 ::selection {
   background: var(--construction-yellow);
   color: var(--construction-black);
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
