@@ -1,4 +1,4 @@
-export type SafetyHazard = {
+﻿export type SafetyHazard = {
   areaSlug: string;
   hazardSlug: string;
   title: string;
@@ -14,6 +14,81 @@ export type SafetyHazard = {
 };
 
 export const highRiseHazards: SafetyHazard[] = [
+  {
+    areaSlug: "work-at-height",
+    hazardSlug: "unprotected-edge",
+    title: "Unprotected Edge",
+    areaTitle: "Work at Height",
+    summary:
+      "An unprotected edge is an open side or edge of a floor, slab, roof, platform, ramp, runway, or other walking-working surface where adequate edge protection is missing, incomplete, damaged, or removed. Workers approaching, passing, or working near the exposed edge may be at risk of falling to a lower level.",
+    whatCanHappen: [
+      "A worker may approach an open slab, floor, roof, or platform edge and fall to a lower level.",
+      "A worker may lose balance while carrying materials, using tools, or moving near the exposed edge.",
+      "Temporary edge protection may be removed for material movement and not reinstated after the activity.",
+      "Loose tools, equipment, or construction materials may fall from the exposed edge.",
+      "Workers below may be struck by falling objects from the open-edge area.",
+      "Poor lighting, congestion, slippery surfaces, or changing site conditions may increase fall exposure.",
+    ],
+    possibleConsequences: [
+      "Fall from height",
+      "Fatal injury",
+      "Serious head injury",
+      "Spinal injury",
+      "Multiple fractures",
+      "Permanent disability",
+      "Falling object incident",
+      "Injury to persons working below",
+    ],
+    inspectionPoints: [
+      "Check all accessible floor, slab, roof, platform, ramp, and working-area edges for fall exposure.",
+      "Check whether complete and suitable edge protection is provided at exposed sides and edges.",
+      "Check continuity of the edge-protection system throughout the accessible work area.",
+      "Check for missing, loose, bent, damaged, displaced, or removed guardrail components.",
+      "Check whether temporary edge protection removed for material movement has been properly reinstated.",
+      "Check access routes and work positions near exposed edges.",
+      "Check for unsafe gaps or openings in the edge-protection arrangement.",
+      "Check housekeeping, loose materials, tools, cables, and trip hazards near the exposed edge.",
+      "Check whether construction materials are stored too close to the edge.",
+      "Check lighting and visibility at the work area and access route.",
+      "Check whether falling-object exposure exists for workers or other persons below.",
+      "Where personal fall protection is required, check the full-body harness, connectors, lifeline, and selected fall-protection arrangement before use.",
+      "Check whether the anchorage or lifeline arrangement is suitable and approved for the intended system and task.",
+      "Check whether the task-specific risk assessment and work method address open-edge exposure.",
+      "Check whether emergency and rescue arrangements are suitable for the selected work-at-height system.",
+    ],
+    requiredControls: [
+      "Eliminate unnecessary worker exposure to open edges through work planning and safe access arrangements.",
+      "Provide complete and suitable collective edge protection wherever reasonably practicable before allowing routine access near an exposed edge.",
+      "Use properly designed, installed, and maintained guardrails, barriers, or other engineered fall-protection arrangements appropriate to the work.",
+      "Restrict access where edge protection is missing, incomplete, damaged, displaced, or temporarily removed.",
+      "Reinstate edge-protection components immediately after temporary access or material movement is completed.",
+      "Do not rely on warning tape alone as a substitute for required physical fall protection where workers remain exposed to a fall hazard.",
+      "Maintain clear and safe access routes near exposed edges.",
+      "Keep loose tools, equipment, and construction materials away from exposed edges.",
+      "Provide suitable falling-object controls where persons may be exposed below.",
+      "Where collective protection does not fully control the exposure, use a suitable personal fall-restraint or fall-arrest system selected for the task.",
+      "Ensure full-body harnesses, connectors, lifelines, and anchorage arrangements are compatible with the selected fall-protection system.",
+      "Use suitable and approved anchorage or lifeline arrangements in accordance with applicable project procedures and competent-person requirements.",
+      "Consider fall clearance and swing-fall exposure where a fall-arrest system is selected.",
+      "Provide work-at-height planning, risk assessment, competent supervision, and pre-work communication.",
+      "Provide suitable emergency and rescue arrangements for the selected fall-protection system.",
+      "Inspect edge protection and fall-protection controls before work and after modification, removal, impact, or significant changes in site conditions.",
+      "Stop work and restrict access when required fall-protection controls are unavailable, defective, or cannot be implemented as planned.",
+      "Apply hazard identification, risk assessment, hierarchy of controls, operational control, competence, emergency preparedness, monitoring, and continual improvement principles consistent with the ISO 45001 occupational health and safety management approach.",
+      "Verify site-specific requirements against applicable legislation, approved work methods, project specifications, manufacturer instructions, and competent-person decisions.",
+    ],
+    observationExample:
+      "An unprotected slab edge was observed in the active work area, exposing personnel to a potential fall-from-height hazard.",
+    recommendedAction:
+      "Provide complete and secure edge protection at the exposed slab edge and restrict access to the affected area until the required fall-protection controls are installed, inspected, and confirmed suitable for the work.",
+    relatedTopics: [
+      "Improper Full Body Harness Use",
+      "Unsafe Anchorage",
+      "Missing Lifeline",
+      "Fall Arrest Clearance",
+      "Falling Material",
+    ],
+  },
   {
     areaSlug: "scaffolding",
     hazardSlug: "incomplete-working-platform",

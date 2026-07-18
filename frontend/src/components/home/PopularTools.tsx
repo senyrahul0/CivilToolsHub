@@ -38,8 +38,8 @@ const tools = [
     description:
       "Create clear and professional construction safety observations for site reporting.",
     category: "Safety",
-    href: "#",
-    status: "Coming Soon",
+    href: "/safety-observation-generator",
+    status: "Live",
   },
   {
     title: "RMC Planning Calculator",
@@ -157,10 +157,7 @@ export default function PopularTools() {
 
             if (!isLive) {
               return (
-                <div
-                  key={tool.title}
-                  className="min-w-0"
-                >
+                <div key={tool.title} className="min-w-0">
                   {cardContent}
                 </div>
               );
