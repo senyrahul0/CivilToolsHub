@@ -36,13 +36,29 @@ const platformLinks = [
     name: "All Calculators",
     href: "/calculators",
   },
+  {
+    name: "Safety Observation Generator",
+    href: "/safety-observation-generator",
+  },
 ];
 
-const upcomingTools = [
-  "Safety Observation Generator",
-  "Construction Templates",
-  "Site Safety Tools",
-  "More Engineering Calculators",
+const legalLinks = [
+  {
+    name: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    name: "Terms & Conditions",
+    href: "/terms-and-conditions",
+  },
+  {
+    name: "Disclaimer",
+    href: "/disclaimer",
+  },
+  {
+    name: "Contact Us",
+    href: "/contact",
+  },
 ];
 
 export default function Footer() {
@@ -54,6 +70,8 @@ export default function Footer() {
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+          {/* CivilToolsHub */}
           <div>
             <Link
               href="/"
@@ -95,6 +113,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Calculators */}
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-yellow-400">
               Calculators
@@ -124,6 +143,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Platform */}
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-yellow-400">
               Platform
@@ -153,47 +173,92 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Legal & Support */}
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-yellow-400">
-              In Development
+              Legal & Support
             </p>
 
             <ul className="mt-6 space-y-4">
-              {upcomingTools.map((tool) => (
-                <li
-                  key={tool}
-                  className="flex items-start gap-3 text-sm text-zinc-400"
-                >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 bg-yellow-400" />
-
-                  <span>{tool}</span>
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-yellow-400"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-yellow-400">→</span>
+                  </Link>
                 </li>
               ))}
             </ul>
 
             <div className="mt-7 border border-zinc-800 bg-zinc-900 p-5">
               <p className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                Current Platform
+                Need Help?
               </p>
 
-              <p className="mt-2 text-2xl font-black text-yellow-400">
-                Tools + Safety
+              <p className="mt-2 text-xl font-black text-yellow-400">
+                Contact CivilToolsHub
               </p>
 
               <p className="mt-2 text-xs leading-5 text-zinc-500">
-                Construction calculators and structured safety guidance
-                organized around sectors, work activities, and hazards.
+                Report technical issues, suggest improvements, or
+                contact us regarding our construction tools and safety
+                resources.
               </p>
+
+              <Link
+                href="/contact"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-black text-white transition hover:text-yellow-400"
+              >
+                Contact Us
+                <span>→</span>
+              </Link>
             </div>
           </div>
         </div>
 
+        {/* Bottom Footer */}
         <div className="mt-12 border-t border-zinc-800 pt-7">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <p className="text-sm text-zinc-500">
-              © {currentYear} CivilToolsHub. Construction tools and
-              practical safety knowledge.
-            </p>
+
+            <div>
+              <p className="text-sm text-zinc-500">
+                © {currentYear} CivilToolsHub. Construction tools and
+                practical safety knowledge.
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+                <Link
+                  href="/privacy-policy"
+                  className="text-zinc-500 transition hover:text-yellow-400"
+                >
+                  Privacy Policy
+                </Link>
+
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-zinc-500 transition hover:text-yellow-400"
+                >
+                  Terms & Conditions
+                </Link>
+
+                <Link
+                  href="/disclaimer"
+                  className="text-zinc-500 transition hover:text-yellow-400"
+                >
+                  Disclaimer
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-zinc-500 transition hover:text-yellow-400"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
 
             <p className="max-w-2xl text-xs leading-5 text-zinc-600 lg:text-right">
               Calculator results and safety information are provided as

@@ -26,6 +26,11 @@ const navigation = [
     live: true,
   },
   {
+    name: "Contact",
+    href: "/contact",
+    live: true,
+  },
+  {
     name: "Templates",
     href: "/templates",
     live: false,
