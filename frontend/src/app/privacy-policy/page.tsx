@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
             <p>
               CivilToolsHub and third-party services used by the website may
               use cookies or similar technologies. Cookies are small files
-              stored on a user's device that can help websites remember
+              stored on a user&apos;s device that can help websites remember
               preferences, understand usage, measure performance, and support
               advertising.
             </p>
@@ -329,7 +329,7 @@ export default function PrivacyPolicyPage() {
 
             <p>
               When this policy is updated, the revised version will be
-              published on this page and the "Last updated" date may be
+              published on this page and the &quot;Last updated&quot; date may be
               changed accordingly.
             </p>
           </PolicySection>
