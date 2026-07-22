@@ -85,7 +85,7 @@ export default function ContactPage() {
             or other relevant matters.
           </p>
 
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
 
             {/* Mobile */}
             <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
@@ -94,14 +94,14 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="tel:+919473798147"
+                href="tel:+916395691337"
                 className="mt-2 inline-block text-lg font-bold text-white transition hover:text-yellow-400"
               >
-                +91 94737 98147
+                +91 63956 91337
               </a>
 
               <p className="mt-2 text-sm text-zinc-500">
-                Tap the number to call CivilToolsHub.
+                Tap the number to call CivilToolsHub directly.
               </p>
             </div>
 
@@ -112,17 +112,34 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="https://wa.me/919473798147?text=Hello%20CivilToolsHub%2C%20I%20would%20like%20to%20contact%20you."
+                href="https://wa.me/916395691337?text=Hello%20CivilToolsHub%2C%20I%20would%20like%20to%20contact%20you."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex rounded-lg bg-green-600 px-5 py-3 font-bold text-white transition hover:bg-green-500"
+                className="mt-3 inline-flex rounded-lg bg-green-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-green-500"
               >
                 Chat on WhatsApp
               </a>
 
               <p className="mt-3 text-sm text-zinc-500">
-                Contact us on WhatsApp for questions, feedback, or
-                website-related inquiries.
+                Contact us on WhatsApp for quick inquiries.
+              </p>
+            </div>
+
+            {/* Email */}
+            <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
+              <p className="text-sm font-bold uppercase tracking-wider text-zinc-500">
+                Email
+              </p>
+
+              <a
+                href="mailto:bhoopendra.singh01@godrejproperties.com"
+                className="mt-2 inline-block break-all text-base font-bold text-white transition hover:text-yellow-400"
+              >
+                bhoopendra.singh01@godrejproperties.com
+              </a>
+
+              <p className="mt-2 text-sm text-zinc-500">
+                Send us an email for detailed feedback or reports.
               </p>
             </div>
 
